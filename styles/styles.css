@@ -1,0 +1,105 @@
+meta {
+}
+title {
+}
+
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    font-family: 'PT Sans', sans-serif;
+}
+.wrapper{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction : column;
+}
+.win {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    padding: 2%;
+    border: 1px #999999 solid;
+    border-radius: 10px;
+    width: 30%;
+}
+.win .header {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+.win .TextInter.active {
+    margin: 0;
+    opacity: 100%;
+}
+.win .TextInter{
+    margin-left: 4%;
+    opacity: 70%;
+}
+.win .TextRegistration {
+    margin-left: 10%;
+    opacity: 70%;
+}
+.TextRegistration.active{
+    margin: 0;
+    opacity: 100%;
+}
+
+.win .main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    width: 100%;
+}
+.win .email {
+    text-align: left;
+    border-radius: 10px;
+    padding: 5% 10%;
+    border:1px solid #999999;
+    background-image: url('../icons/email.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position: 3%;
+    outline: 0;
+}
+.win .password {
+    margin-top: 5%;
+    text-align: left;
+    padding: 5% 10%;
+    border-radius: 10px;
+    border: 1px solid #999999;
+    background-image: url('../icons/clock.png');
+    background-repeat: no-repeat;
+    background-position: 3%;
+    outline: 0;
+}
+.win .footer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    width: 100%;
+    justify-content: space-between;
+}
+.win .ForgetPassword {
+    display: flex;
+    color: #cc6600;
+    text-align: center;
+    background-color: white;
+    border: 0;
+    align-items:center;
+}
+.win .ButtonInter {
+    display: flex;
+    padding: 4% 20%;
+    background-color: #cc6600;
+    text-decoration-color: white;
+    border-radius: 10px;
+    border:0;
+    color: white;
+}
