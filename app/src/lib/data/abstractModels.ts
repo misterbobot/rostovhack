@@ -1,5 +1,5 @@
 export interface AbstractModel{
     toJson : () => string,
-    fromJson : () => void
+    fromJson : (json : string) => any
 
 }

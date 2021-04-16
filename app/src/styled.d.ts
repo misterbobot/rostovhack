@@ -31,6 +31,7 @@ declare module "styled-components" {
         warning : Color;
         info: Color;
         background : Color;
+        border : Color
         };
     }
 }

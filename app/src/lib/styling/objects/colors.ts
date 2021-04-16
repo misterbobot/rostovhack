@@ -8,9 +8,9 @@ const palletePrimary = new PalleteColor(
 );
 
 const palleteSecondary = new PalleteColor(
-    "#DBDBDB",
-    "#BDBDBD",
-    "#9A9A9A"
+    "#cc6600",
+    "#a75503",
+    "#dd750c"
 );
 
 const textColors = new Color(
@@ -51,6 +51,10 @@ const infoColor = new Color(
     "#000000"
 )
 
+const borderColor = new Color(
+    "#cccccc"
+)
+
 const backGroundColor = new Color(
     "#000000",
     [
@@ -64,7 +68,7 @@ const backGroundColor = new Color(
 
 
 
-export {palletePrimary , palleteSecondary, textColors, errorColor, warningColor, infoColor,backGroundColor}
+export {palletePrimary , palleteSecondary, textColors, errorColor, warningColor, infoColor,backGroundColor, borderColor}
 
 
 

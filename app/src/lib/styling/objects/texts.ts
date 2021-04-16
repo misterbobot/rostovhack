@@ -1,6 +1,6 @@
 import { Header } from '../classes/Header'
 
-export const fontFamily = "\"Golos\", sans-serif";
+export const fontFamily = "Montserrat";
 
 const H1 = new Header(
     fontFamily,

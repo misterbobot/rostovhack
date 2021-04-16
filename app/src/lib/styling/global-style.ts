@@ -1,4 +1,5 @@
 import {createGlobalStyle, css} from "styled-components";
+import { theme } from "./theme";
 
 
 
@@ -10,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     html {
       box-sizing: border-box;
       font-size: ${({theme}) => theme.typography.htmlFontSize};
+      font-family : ${theme.typography.fontFamily}
     }
     
     *, *::before, *::after {

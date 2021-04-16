@@ -10,11 +10,14 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './lib/styling/theme';
 import { BrowserRouter } from 'react-router-dom';
 
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store = {store}>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
+          
           <App/>
         </ThemeProvider>
       </BrowserRouter>

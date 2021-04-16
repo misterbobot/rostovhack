@@ -7,6 +7,7 @@ import {GlobalStyle} from "./lib/styling";
 
 const App: React.FC = () => (
   <>
+    <GlobalStyle></GlobalStyle>
     <AppRoutes/>
   </>
 );

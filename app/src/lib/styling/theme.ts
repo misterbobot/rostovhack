@@ -1,6 +1,6 @@
 import { DefaultTheme } from "styled-components";
 import PalleteColor from "./classes/PalleteColor";
-import { palletePrimary, palleteSecondary, textColors, errorColor, warningColor, infoColor, backGroundColor } from './objects/colors';
+import { palletePrimary, palleteSecondary, textColors, errorColor, warningColor, infoColor, backGroundColor, borderColor } from './objects/colors';
 import { H1, H2, H3, H4, H5, H6, fontFamily } from './objects/texts'
 
 
@@ -13,7 +13,8 @@ export const theme: DefaultTheme = {
         error: errorColor,
         warning: warningColor,
         info: infoColor,
-        background : backGroundColor
+        background : backGroundColor,
+        border : borderColor
     },
     typography: {
         htmlFontSize: "62.5%",
