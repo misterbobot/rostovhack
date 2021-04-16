@@ -7,6 +7,10 @@ import { CardAdd } from '../molecules/addingCard';
 import { AddCardButton } from '../molecules/addCardButton';
 import { CardList } from '../molecules/cardList';
 import internal from 'node:stream';
+import { Column } from '../../data/models/column';
+import { CardModel } from '../../data/models/cardModel';
+import { useAppDispatch } from '../../store/hooks';
+import { moveCard } from '../../store/slices/boardSlice';
 
 
 const CloumnCard = styled.div`
@@ -29,12 +33,15 @@ const CloumnCard = styled.div`
 interface CloumnCardInterface{
     name : string;
     id : number;
+    list : Array<CardModel>
 }
 
 
-export const BoardCloumnCard: React.FC<CloumnCardInterface> = ({name,id}) => {
+export const BoardCloumnCard: React.FC<CloumnCardInterface> = ({name,id,list}) => {
 
     const [editing, setEditing] = useState(false);
+
+    const dispatch = useAppDispatch()
 
     const onAddButtonClick = () => {
         setEditing(true);
@@ -59,17 +66,17 @@ export const BoardCloumnCard: React.FC<CloumnCardInterface> = ({name,id}) => {
       const handleDrop = (e: any,card:any) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log(card);
+        dispatch(moveCard(card.id))
       };
 
     
 
-    return <CloumnCard onDrop={e => handleDrop(e,{id:id})} id = "2"
+    return <CloumnCard onDrop={e => handleDrop(e,{id:id})} 
     onDragOver={e => handleDragOver(e)}
     onDragEnter={e => handleDragEnter(e)}
     onDragLeave={e => handleDragLeave(e)}>
             <CardHeader name = {name}/>
-            <CardList></CardList>
+            <CardList list = { list }></CardList>
             {editing ? <CardAdd cancel={onCancelButtonClick}/> : <AddCardButton click = {onAddButtonClick} />}
         </CloumnCard>
         
