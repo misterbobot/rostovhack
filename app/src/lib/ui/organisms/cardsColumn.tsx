@@ -11,6 +11,7 @@ import { Column } from '../../data/models/column';
 import { CardModel } from '../../data/models/cardModel';
 import { useAppDispatch } from '../../store/hooks';
 import { moveCard } from '../../store/slices/boardSlice';
+import { updateColumnTitle } from '../../../repository/boardApi';
 
 
 const CloumnCard = styled.div`
@@ -20,9 +21,10 @@ const CloumnCard = styled.div`
     justify-content : space-between;
     padding : 15px;
     border-radius : 10px;
-    border: 2px ${theme.palette.border.main} solid;
+    border: 1.4px ${theme.palette.border.main} solid;
     flex:3;
-    max-width:35%;
+    max-width: 400px;
+    min-width : 300px;
     & > *{
         margin-top: 0.5vh;
         margin-bottom : 0.5vh;
@@ -33,13 +35,14 @@ const CloumnCard = styled.div`
 interface CloumnCardInterface{
     name : string;
     id : number;
-    list : Array<CardModel>
+    list : Array<CardModel>,
 }
 
 
 export const BoardCloumnCard: React.FC<CloumnCardInterface> = ({name,id,list}) => {
 
     const [editing, setEditing] = useState(false);
+    const [col, setCol] = useState(null);
 
     const dispatch = useAppDispatch()
 
@@ -50,34 +53,53 @@ export const BoardCloumnCard: React.FC<CloumnCardInterface> = ({name,id,list}) =
     const onCancelButtonClick = () =>{
         setEditing(false);
     }
-    const handleDragEnter = (e: any) => {
+    const handleDragEnter = (e: any, card: any) => {
         e.preventDefault();
         e.stopPropagation();
-        console.log(e);
+     
+        
+        setCol(card.id)
       };
-      const handleDragLeave = (e: any) => {
+      const handleDragLeave = (e: any,card: any) => {
         e.preventDefault();
         e.stopPropagation();
+        
+        console.log(card)
+        
       };
       const handleDragOver = (e: any) => {
         e.preventDefault();
         e.stopPropagation();
+        
       };
+
+      const handleDragEnd = (e: any) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        
+      };
+
       const handleDrop = (e: any,card:any) => {
         e.preventDefault();
         e.stopPropagation();
         dispatch(moveCard(card.id))
       };
+    
+    const editTitle = (newName : string) => {
+      updateColumnTitle(id, newName, dispatch)
+    }
 
     
 
-    return <CloumnCard onDrop={e => handleDrop(e,{id:id})} 
+    return <CloumnCard onDrop={e => handleDrop(e,{id:id}) } 
     onDragOver={e => handleDragOver(e)}
-    onDragEnter={e => handleDragEnter(e)}
-    onDragLeave={e => handleDragLeave(e)}>
-            <CardHeader name = {name}/>
+    onDragEnd = {e => handleDragEnd(e)}
+    onDragEnter={e => handleDragEnter(e, id)}
+    onDragLeave={e => handleDragLeave(e,id)}>
+            <CardHeader handleEdit = {editTitle} name = {name}/>
             <CardList list = { list }></CardList>
-            {editing ? <CardAdd cancel={onCancelButtonClick}/> : <AddCardButton click = {onAddButtonClick} />}
+            {editing ? <CardAdd column={id} cancel={onCancelButtonClick}/> : <AddCardButton click = {onAddButtonClick} />}
         </CloumnCard>
         
 

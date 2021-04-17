@@ -10,14 +10,24 @@ interface boardState{
     dragging : number | null,
     columns: Array<Column>,
     name : string,
-    
+    newCardName : string
+}
 
+interface card2add{
+    id : number;
+    columnid : number;
+}
+
+interface changethetitle{
+    columnid: number,
+    text : string
 }
 
 const initialState : boardState = {
     dragging : null,
     columns:[],
-    name : "Загрузка..."
+    name : "Загрузка...",
+    newCardName : ""
 }
 //TODO change inital State
 
@@ -65,6 +75,32 @@ export const BoardSlice = createSlice({
             });
             state.dragging = null;
             return state;
+        },
+
+        changecardname : (state, action : PayloadAction<string>) => {
+            state.newCardName = action.payload;
+            return state;
+        },
+
+        addcard : (state,action : PayloadAction<card2add>) => {
+            
+            state.columns.forEach((column,index) => {
+                if (column.id == action.payload.columnid){
+                    state.columns[index].list.push(new CardModel(action.payload.id,state.newCardName))
+                }
+            });
+
+            state.newCardName = "";
+
+            return state
+        },
+
+        changecolumntitle : (state, action : PayloadAction<changethetitle>) => {
+            state.columns.forEach((column,index) => {
+                if (column.id == action.payload.columnid){
+                    state.columns[index].name = action.payload.text
+                }
+            });
         }
 
 
@@ -72,7 +108,7 @@ export const BoardSlice = createSlice({
 })
 
 
-export const { getboard, pullCard, moveCard } = BoardSlice.actions
+export const { getboard, pullCard, moveCard,changecardname,addcard,changecolumntitle } = BoardSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectBoard = (state: RootState) => state.board

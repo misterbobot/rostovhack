@@ -19,14 +19,15 @@ export const MyInput = styled.input<InputProps>`
 
             border-radius : 10px;
             border: 2px ${theme.palette.border.main} solid;
-            padding : 10px 20px;
+            padding : 10px 20px 40px 10px;
             line-height: 50px;
             font-family : ${theme.typography.fontFamily};
             
+            ${({theme}) => () => theme.typography.h5.getCss()};
             ::placeholder{
-                
+                vertical-align: top;
                 color : ${theme.palette.border.main};
-                font-size: 1.2vw;
+                font-size: 1.5rem;
                 line-height: 140%;
                 font-family : ${theme.typography.fontFamily};
             }

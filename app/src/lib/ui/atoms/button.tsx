@@ -12,4 +12,5 @@ export const Button = styled.button`
     border:0;
     font-family : ${theme.typography.fontFamily};
     font-weight : 600;
+    text-align : center;
 `

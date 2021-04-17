@@ -34,8 +34,9 @@ const textColors = new Color(
         },
         {
             propName : "disabled",
-            propValue : ""
-        }
+            propValue : "#666666"
+        },
+        
     ]
 );
 

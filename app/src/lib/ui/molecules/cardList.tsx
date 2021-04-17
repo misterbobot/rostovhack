@@ -4,8 +4,9 @@ import React from 'react'
 import styled from "styled-components"
 import { theme } from "../../styling"
 import { CardModel } from "../../data/models/cardModel"
-import { useAppDispatch } from "../../store/hooks"
-import { pullCard } from "../../store/slices/boardSlice"
+import { useAppDispatch, useAppSelector } from "../../store/hooks"
+import { pullCard, SelectDragging } from "../../store/slices/boardSlice"
+import { store } from "../../store/store"
 
 
 interface CardListProps{
@@ -29,16 +30,16 @@ export const CardList : React.FC<CardListProps> = ({list}) => {
 
     const dispatch = useAppDispatch()
 
-    const dragging = SelectDragging()
+    const dragging = useAppSelector((state) => state.board.dragging)
 
     const handleDragStart = (e: any, id : number) => {
         dispatch(pullCard(id))
         console.log(id,"ID");
-      };
+      };    
 
     return <>
         {list.map((card)=>
-        <Card onDragStart = {e => handleDragStart(e,card.id) } draggable = "true" key = {card.id}>
+        <Card onDragStart = {e => handleDragStart(e,card.id) } draggable = "true" key = {card.id} dragging  = {dragging == card.id}>
             <CardInner>
                 {card.text}
             </CardInner>
