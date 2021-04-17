@@ -9,16 +9,17 @@ import { BoardName } from "../molecules/boardName";
 import { BoardCloumnCard } from "../organisms/cardsColumn";
 import TasksPic from '../../../img/backgrounds/board.png'
 import { NavBar } from "../organisms/navbar";
+import React from 'react';
 
-const BoardContent = styled.div`
-    padding : 10px 20px;
+export const BoardContent = styled.div`
+    padding : 10px 0px;
     background-image : url(${TasksPic});
     height: 960px;
     background-size:cover;
 
 `
 
-const BoardCollumsWrapper = styled.div`
+export const BoardCollumsWrapper = styled.div`
 
     display : flex;
     flex-direction : row;
@@ -34,7 +35,7 @@ const BoardCollumsWrapper = styled.div`
 
 `
 
-export const BoardColumns = () => {
+export const BoardColumns : React.FC = () => {
 
     const board = useAppSelector((state) => state.board)
     const dispatch = useAppDispatch()
@@ -56,7 +57,6 @@ export const BoardColumns = () => {
 
     return <>
     <div>
-            <NavBar></NavBar>
             <BoardContent>
                 <BoardName>{board.name}</BoardName>
                 <BoardCollumsWrapper>

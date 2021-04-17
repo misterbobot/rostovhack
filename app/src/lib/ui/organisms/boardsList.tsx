@@ -8,11 +8,17 @@ import Dots from '../../../img/icons/dots.png'
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getBoards } from "../../store/slices/boardsSlice";
 import { getBoardsApi } from "../../../repository/boardsApi";
+import { useHistory } from "react-router-dom";
+import { WorkSpace } from "../../data/models/workspaceModel";
+import { setworkspace } from "../../store/slices/navigatorSlice";
+import back from '../../../img/backgrounds/projects.png'
+
 
 const BoardsListContainer = styled.div`
     display : flex;
     flex-direction : column;
     width : 100%;
+
 `
 
 const BoardsListItem = styled.div`
@@ -40,7 +46,7 @@ const BoardListRight = styled.div`
 `
 
 const BoardListList = styled.div`
-    background-color : #ffffff;
+    background-color : rgba(255, 255, 255, 0.74) !important;
     display : flex;
     flex-direction : column;
     width : 97%;
@@ -60,6 +66,14 @@ margin-top : 0.4vh;
 export const BoardsList : React.FC = () => {
 
     const dispatch = useAppDispatch();
+    const history = useHistory();
+
+
+    const gotoWorkSpace = (id : number, name: string) =>{
+        dispatch(setworkspace(new WorkSpace(id, name)));
+        history.push("/workspace")
+        
+    }
 
     useEffect(() => {
         getBoardsApi(dispatch)
@@ -93,14 +107,12 @@ export const BoardsList : React.FC = () => {
             <Divider color = {theme.palette.border.main}>frf</Divider>
             <BoardListList>
             {
-                boards.map(board => <BoardsListItem>
+                boards.map(board => <BoardsListItem onClick = {() => gotoWorkSpace(board.id,board.name)}>
                     <BoardsListLeft>
                         <BoardLeftItem name={board.name}/>
                     </BoardsListLeft>
                     <BoardsListCenter>
-                        <CardText>{board.desc}</CardText>
-                        
-                        
+                        <CardText>{board.desc}</CardText>                      
                     </BoardsListCenter>
                     <BoardListRight>
                     <BoardListRight>
@@ -111,6 +123,7 @@ export const BoardsList : React.FC = () => {
             }
 
             </BoardListList>
+            <Divider color = {theme.palette.border.main}>frf</Divider>
         </BoardsListContainer>
     </>
 

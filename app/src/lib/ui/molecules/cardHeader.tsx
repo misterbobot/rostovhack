@@ -1,7 +1,7 @@
 import React from 'react'
 import { theme } from '../../styling'
 import { H4, HeaderColors } from '../atoms/heading'
-
+import styled from 'styled-components'
 
 
 interface CardHeaderProps{
@@ -9,12 +9,20 @@ interface CardHeaderProps{
     handleEdit : any
 }
 
+const Ch = styled(H4)`
+
+    font-size : 1.8rem;
+    line-height : 100%;
+    margin-bottom : 3vh !important;
+
+`
+
 export const CardHeader : React.FC<CardHeaderProps> = ({name,handleEdit}) => {
 
     return <>
-        <H4  color = {HeaderColors.secondary}>
+        <Ch  color = {HeaderColors.secondary}>
             <div contentEditable="true"  onInput={e => handleEdit(e.currentTarget.textContent)} >{name}</div>
-        </H4>
+        </Ch>
     </>
 
 }

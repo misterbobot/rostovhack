@@ -40,7 +40,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({change}) => {
                 }else{
                     setEmail("")
                     setPassword("")
-                    history.push("/board/1")
+                    history.push("/boards")
                 }
             }
         )

@@ -14,8 +14,10 @@ const NavBarMain = styled.div`
     flex-direction : row;
     align-items : center;
     justify-content: flex-start;
-    margin-top : 2vh;
-    margin-bottom : 2vh;
+    background-color : white;
+    
+    padding-top : 2vh;
+    padding-bottom : 2vh;
     margin-left:1vw;
     margin-right:1vw;
     & > *{

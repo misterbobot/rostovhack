@@ -15,6 +15,7 @@ export const PrivateRoute: React.FC<Props> = ({ component: Component, ...rest })
     
 
     if (!loggenIn){
+        alert(2)
         return <Redirect to="/login"/>;
     }
     return <Component {...rest} />
