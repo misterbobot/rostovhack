@@ -7,15 +7,32 @@ html{
     height: 100%;
 }
 body{
-    height: 100%;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif; 
+}
+.background{
+    position: absolute;
+    left: 7%;
+    bottom: 1%;
+    width: 40%;
+    height: 80%;
+    background-image: url(../img/Background.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom left;
+}
+.title {
+    font-size: 300%;
+    opacity: 70%;
+    text-align: end;
+    margin-top: 15%;
+    margin-right: 5%;
 }
 .wrapper{
     display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
     flex-direction : column;
+    margin-right: 9%;
+    margin-top: 3%;
 }
 .win {
     display: flex;
@@ -26,6 +43,8 @@ body{
     border: 1px #999999 solid;
     border-radius: 10px;
     width: 30%;
+    background-color: white;
+    z-index: 1;
 }
 .win .header {
     display: flex;
