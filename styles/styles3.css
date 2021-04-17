@@ -17,8 +17,6 @@ button{
 .titleCooperation{
     display: flex;
     flex-direction: row;
-    margin-left: 1%;
-    margin-top: 1%;
 }
 .titleCooperationThin{
     font-family: 'Montserrat', sans-serif;
@@ -39,6 +37,7 @@ button{
     align-content: center;
     justify-content: center;
     background-color: white;
+    margin-left: 5%;
 }
 .header .create {
     display: flex;

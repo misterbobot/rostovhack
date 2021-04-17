@@ -19,6 +19,19 @@ button {
     color: #333333;
     padding-left: 2%
 }
+.titleCooperation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.titleCooperationThin{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+.titleCooperationBold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;  
+}
 .header .projects {
     display: flex;
     flex-direction: column;
@@ -30,6 +43,7 @@ button {
     align-content: center;
     justify-content: center;
     background-color: white;
+    margin-left: 5%;
 }
 .header .create {
     display: flex;
