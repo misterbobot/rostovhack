@@ -1,6 +1,6 @@
 import { Column } from "../lib/data/models/column";
 import { useAppDispatch } from "../lib/store/hooks";
-import { addcard, changecolumntitle } from "../lib/store/slices/boardSlice";
+import { addcard, changecolumntitle, createColumn } from "../lib/store/slices/boardSlice";
 import {A, setAuthorizationHeader} from "../repository/default"
 
 
@@ -71,7 +71,7 @@ export const AddCardApi = async (column : number, dispatch: any) : Promise<void>
 /**
  * @function updateColumnTitle
  *
- * @description Function to add the card to the column
+ * @description Function to update the column title
  * @param column : Column id
  * 
  */
@@ -89,3 +89,23 @@ export const AddCardApi = async (column : number, dispatch: any) : Promise<void>
     return 
    
 }
+
+/**
+ * @function createColumnApi
+ *
+ * @description Function tocreate the column
+ * 
+ */
+
+ export const createColumnApi = async (dispatch: any) : Promise<void> => {
+    
+    //TODO call api
+
+    let createdId = await 4;
+
+    dispatch(createColumn(createdId))
+
+    return 
+   
+}
+

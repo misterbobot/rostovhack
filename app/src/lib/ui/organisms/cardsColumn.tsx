@@ -22,6 +22,7 @@ const CloumnCard = styled.div`
     padding : 15px;
     border-radius : 10px;
     border: 1.4px ${theme.palette.border.main} solid;
+    background : white;
     flex:3;
     max-width: 400px;
     min-width : 300px;

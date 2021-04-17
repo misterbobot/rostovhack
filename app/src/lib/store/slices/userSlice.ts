@@ -5,11 +5,11 @@ import type { RootState } from '../store'
 interface UserState{
     token : string | null,
     loggedIn : boolean
-}
+} 
 
 const initialState : UserState = {
     token : null,
-    loggedIn : true
+    loggedIn : false
 }
 //TODO change inital State
 

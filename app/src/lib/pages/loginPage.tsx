@@ -1,12 +1,13 @@
 import React from 'react'
+import { LoginPage } from '../ui/templates/loginPage'
 
 
 export const loginPage: React.FC = () => {
 
     return <>
-        <div className="">
-            Login Page
-        </div>
+
+            <LoginPage></LoginPage>
+        
     </>
 
 }

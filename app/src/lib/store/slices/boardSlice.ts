@@ -101,6 +101,10 @@ export const BoardSlice = createSlice({
                     state.columns[index].name = action.payload.text
                 }
             });
+        },
+        createColumn : (state, action : PayloadAction<number>) => {
+            state.columns.push(new Column([],"Новый столбец",action.payload));
+            return state
         }
 
 
@@ -108,7 +112,7 @@ export const BoardSlice = createSlice({
 })
 
 
-export const { getboard, pullCard, moveCard,changecardname,addcard,changecolumntitle } = BoardSlice.actions
+export const { getboard, pullCard, moveCard,changecardname,addcard,changecolumntitle,createColumn } = BoardSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectBoard = (state: RootState) => state.board
