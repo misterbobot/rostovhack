@@ -9,6 +9,20 @@ html{
 body{
     font-family: 'PT Sans', sans-serif; 
 }
+.titleCooperation{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+.titleCooperationThin{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+.titleCooperationBold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;  
+}
 .background{
     position: absolute;
     left: 7%;
