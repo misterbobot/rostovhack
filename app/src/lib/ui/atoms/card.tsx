@@ -1,6 +1,6 @@
 import styled , { css} from "styled-components";
 import { theme } from "../../styling/theme";
-
+ 
 interface cardProps{
     dragging : boolean;
 }

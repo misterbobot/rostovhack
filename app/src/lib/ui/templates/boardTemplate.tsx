@@ -10,6 +10,7 @@ import { BoardCloumnCard } from "../organisms/cardsColumn";
 import TasksPic from '../../../img/backgrounds/board.png'
 import { NavBar } from "../organisms/navbar";
 import React from 'react';
+import { PageDesc } from "../atoms/pageDecs";
 
 export const BoardContent = styled.div`
     padding : 10px 0px;
@@ -35,6 +36,11 @@ export const BoardCollumsWrapper = styled.div`
 
 `
 
+const ShowPath = styled(PageDesc)`
+    margin-left : 1vw;
+    margin-top : 2vh;
+`
+
 export const BoardColumns : React.FC = () => {
 
     const board = useAppSelector((state) => state.board)
@@ -58,6 +64,7 @@ export const BoardColumns : React.FC = () => {
     return <>
     <div>
             <BoardContent>
+                <ShowPath>Проекты / {board.name}</ShowPath>
                 <BoardName>{board.name}</BoardName>
                 <BoardCollumsWrapper>
                     {board.columns.map((col) => <BoardCloumnCard name = {col.name} id={col.id} list = {col.list}/>)}

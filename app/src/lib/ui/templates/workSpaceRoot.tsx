@@ -12,6 +12,9 @@ import { AddColumn } from "../molecules/addColumn";
 import { getboard } from "../../store/slices/boardSlice";
 import { getBoard } from "../../../repository/boardApi";
 import { Tabs } from "../../store/slices/navigatorSlice";
+import { UsersPage } from "./users";
+import { Chat } from "./chat";
+import { Sales } from './sales'
 
 const WorkSpaceMain = styled.div`
     display : flex;
@@ -48,7 +51,7 @@ export const WorkSpaceRoot : React.FC = () => {
             <Menu/>
             <Content>
             {
-                navigator.activeTab == Tabs.board ? <BoardColumns/>: <></>
+                navigator.activeTab == Tabs.board ? <BoardColumns/>: navigator.activeTab == Tabs.users? <UsersPage></UsersPage>:navigator.activeTab == Tabs.chat ?<Chat></Chat> : <Sales></Sales>
             }
             </Content>
         </WorkSpaceMain>

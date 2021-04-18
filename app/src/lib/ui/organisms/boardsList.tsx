@@ -14,14 +14,14 @@ import { setworkspace } from "../../store/slices/navigatorSlice";
 import back from '../../../img/backgrounds/projects.png'
 
 
-const BoardsListContainer = styled.div`
+export const BoardsListContainer = styled.div`
     display : flex;
     flex-direction : column;
     width : 100%;
 
 `
 
-const BoardsListItem = styled.div`
+export const BoardsListItem = styled.div`
     display : flex;
     flex-direction : row;
     align-items  : center;
@@ -30,22 +30,22 @@ const BoardsListItem = styled.div`
     margin-bottom : 0.3vh;
 `
 
-const BoardsListLeft = styled.div`
+export const BoardsListLeft = styled.div`
     flex:2;
 `
 
-const BoardsListCenter = styled.div`
+export const BoardsListCenter = styled.div`
     flex : 3;
 `
 
-const BoardListRight = styled.div`
+export const BoardListRight = styled.div`
     flex : 6;
     display : flex;
     justify-content : flex-end;
     align-items : flex-end;
 `
 
-const BoardListList = styled.div`
+export const BoardListList = styled.div`
     background-color : rgba(255, 255, 255, 0.74) !important;
     display : flex;
     flex-direction : column;
@@ -55,7 +55,7 @@ const BoardListList = styled.div`
     
 `
 
-const CardText = styled.div`
+export const CardText = styled.div`
 text-align : center;
 margin-top : 0.4vh;
     color : black;
