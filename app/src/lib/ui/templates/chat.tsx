@@ -4,7 +4,7 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import styled from "styled-components";
 import back from "../../../img/backgrounds/chat.png";
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { PageDesc } from "../atoms/pageDecs";
 import { PageHeader } from "../atoms/pageHeader";
 import '../../../css/chat.css';
@@ -12,6 +12,8 @@ import micicon from '../../../img/icons/mic.png';
 import user from '../../../img/icons/user.png'
 import stop from '../../../img/icons/stop.png'
 import { Message } from "../organisms/message";
+import { pushmessage } from "../../store/slices/messagesSlice";
+import { MessageModel } from "../../data/models/message";
 
 
 const ChatContainer = styled.div`
@@ -41,9 +43,8 @@ export const Chat: React.FC = () => {
   const [recording, setRecording] = useState(false)
   const [text, setText] = useState("")
 
-  useEffect(() => {
-    setText(transcript)
-  })
+  const messages = useAppSelector((state) => state.messages.messages)
+  const dispatch = useAppDispatch()
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null;
@@ -56,14 +57,32 @@ export const Chat: React.FC = () => {
 
   const stopRecord = () => {
     SpeechRecognition.stopListening()
+    setText(text + transcript)
     setRecording(false)
   }
 
   const handleChange = (event : any) =>{
 
-    setText(text+event.target.value)
+    setText(event.target.value)
     
   }
+
+  const handleKeyPress = (event : any) => {
+    if(event.key === 'Enter'){
+      var today = new Date()
+      dispatch(pushmessage(
+        new MessageModel(
+          "Вы",
+          text,
+          today.getHours() + ':' + today.getMinutes()
+        )
+      ))
+      
+      setText("")
+    }
+  }
+
+
 
 
 
@@ -81,13 +100,14 @@ export const Chat: React.FC = () => {
         <div className="chat">
           <div className="ChatTitle">Чат {workspace?.name}</div>
           <div className="messages">
-            <Message author="Кирилл" text="Тестовое сообщение" date="10:27"/>
-            <Message author="Кирилл" text="Тестовое сообщение" date="10:27"/>
-            <Message author="Кирилл" text="Тестовое сообщение" date="10:27"/>
-            <Message author="Кирилл" text="Тестовое сообщение" date="10:27"/>
+          {
+            messages.map((message) =>              
+              <Message author={message.author} text={message.text} date={message.date}/>
+            )
+          }
           </div>
           <div className="container">
-            <textarea className="inputMessage" placeholder="Написать сообщение" defaultValue={""} value={text} onChange={(event) => handleChange(event)} />
+            <textarea onKeyPress={(event) => handleKeyPress(event)} className="inputMessage" placeholder="Написать сообщение" defaultValue={""} value={text} onChange={(event) => handleChange(event)} />
             {!recording ? <div onClick = {startRecord} className="niceImg"></div> : <div onClick={stopRecord} className="stopIcon"></div>}
           </div>
         </div>
