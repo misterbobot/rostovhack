@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
@@ -10,6 +10,7 @@ import { PageHeader } from "../atoms/pageHeader";
 import '../../../css/chat.css';
 import micicon from '../../../img/icons/mic.png';
 import user from '../../../img/icons/user.png'
+import stop from '../../../img/icons/stop.png'
 import { Message } from "../organisms/message";
 
 
@@ -37,12 +38,34 @@ export const Chat: React.FC = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const workspace = useAppSelector((state) => state.navigator.workspace)
 
+  const [recording, setRecording] = useState(false)
+  const [text, setText] = useState("")
+
+  useEffect(() => {
+    setText(transcript)
+  })
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null;
   }
 
-  
+  const startRecord = () => {
+    SpeechRecognition.startListening()
+    setRecording(true)
+  }
+
+  const stopRecord = () => {
+    SpeechRecognition.stopListening()
+    setRecording(false)
+  }
+
+  const handleChange = (event : any) =>{
+
+    setText(text+event.target.value)
+    
+  }
+
+
 
   return (
     <>
@@ -53,12 +76,6 @@ export const Chat: React.FC = () => {
         <ChatContainerMain>
           
           <div>
-              <button onClick={SpeechRecognition.stopListening}>Stop</button>
-              <button onClick={() => SpeechRecognition.startListening()}>
-                Start
-              </button>
-              <button onClick={resetTranscript}>Reset</button>
-              <p>{transcript}</p>
           </div>
           <div className="main">
         <div className="chat">
@@ -70,8 +87,8 @@ export const Chat: React.FC = () => {
             <Message author="Кирилл" text="Тестовое сообщение" date="10:27"/>
           </div>
           <div className="container">
-            <textarea className="inputMessage" placeholder="Написать сообщение" defaultValue={""} />
-            <div className="niceImg"></div>
+            <textarea className="inputMessage" placeholder="Написать сообщение" defaultValue={""} value={text} onChange={(event) => handleChange(event)} />
+            {!recording ? <div onClick = {startRecord} className="niceImg"></div> : <div onClick={stopRecord} className="stopIcon"></div>}
           </div>
         </div>
 

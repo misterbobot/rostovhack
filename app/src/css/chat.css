@@ -186,11 +186,24 @@ button {
     resize: none;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0);
+    font-weight: 600;
+    font-size: 2rem;
 }
 
 .niceImg {
     flex: 1;
     background-image: url('../img/icons/mic.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.stopIcon {
+    flex: 1;
+    background-image: url('../img/icons/stop.png');
     background-size: contain;
     background-repeat: no-repeat;
     display: flex;
