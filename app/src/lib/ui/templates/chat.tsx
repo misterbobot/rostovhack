@@ -10,6 +10,7 @@ import { PageHeader } from "../atoms/pageHeader";
 import '../../../css/chat.css';
 import micicon from '../../../img/icons/mic.png';
 import user from '../../../img/icons/user.png'
+import { Message } from "../organisms/message";
 
 
 const ChatContainer = styled.div`
@@ -63,52 +64,10 @@ export const Chat: React.FC = () => {
         <div className="chat">
           <div className="ChatTitle">Чат {workspace?.name}</div>
           <div className="messages">
-            <div className="user">
-              <div className="avatar"><img height="35vh" src={user} /></div>
-              <div className="userInfo">
-                <div className="nameData">
-                  <div className="name">Кирилл</div>
-                  <div className="data">12:36</div>
-                </div>
-                <div className="message">Мы всех победим на хакатоне</div>
-              </div>
-            </div><div className="user">
-              <div className="avatar"><img src="icons/Avatar.png" /></div>
-              <div className="userInfo">
-                <div className="nameData">
-                  <div className="name">Кирилл</div>
-                  <div className="data">12:36</div>
-                </div>
-                <div className="message">Мы всех победим на хакатоне</div>
-              </div>
-            </div><div className="user">
-              <div className="avatar"><img src="icons/Avatar.png" /></div>
-              <div className="userInfo">
-                <div className="nameData">
-                  <div className="name">Кирилл</div>
-                  <div className="data">12:36</div>
-                </div>
-                <div className="message">Мы всех победим на хакатоне</div>
-              </div>
-            </div><div className="user">
-              <div className="avatar"><img src="icons/Avatar.png" /></div>
-              <div className="userInfo">
-                <div className="nameData">
-                  <div className="name">Кирилл</div>
-                  <div className="data">12:36</div>
-                </div>
-                <div className="message">Мы всех победим на хакатоне</div>
-              </div>
-            </div><div className="user">
-              <div className="avatar"><img src="icons/Avatar.png" /></div>
-              <div className="userInfo">
-                <div className="nameData">
-                  <div className="name">Кирилл</div>
-                  <div className="data">12:36</div>
-                </div>
-                <div className="message">Мы всех победим на хакатоне</div>
-              </div>
-            </div>
+            <Message author="Кирилл" text="Тестовое сообщение" date="10:27"/>
+            <Message author="Кирилл" text="Тестовое сообщение" date="10:27"/>
+            <Message author="Кирилл" text="Тестовое сообщение" date="10:27"/>
+            <Message author="Кирилл" text="Тестовое сообщение" date="10:27"/>
           </div>
           <div className="container">
             <textarea className="inputMessage" placeholder="Написать сообщение" defaultValue={""} />
