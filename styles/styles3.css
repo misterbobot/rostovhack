@@ -1,5 +1,6 @@
 body{
     margin:0;
+    font-family: 'PT Sans';
 }
 button{
     border: 0;
@@ -17,6 +18,7 @@ button{
 .titleCooperation{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .titleCooperationThin{
     font-family: 'Montserrat', sans-serif;
@@ -47,4 +49,127 @@ button{
     margin-left: 5%;
     padding: 0.75% 3%;
     border-radius: 10px;
+}
+.titlePanel{
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    padding-left: 2%;
+}
+.ProjectTitlle{
+    margin-left: 1%
+}
+.ProjectName{
+    color: #666666;
+}
+.ProjectDescription{
+    font-size: small;
+    color: #999999;
+}
+.link{
+ margin-left: 4%;
+ color: #666666;
+}
+.main {
+    
+}
+.main .chat {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 1%;
+}
+.main .ChatTitle {
+    text-align: center;
+    font-weight: 600;
+}
+.backText{
+    margin-left: 0.5%;
+    color: #666666;
+    font-size: initial;
+}
+.main .back {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    margin-left: 2%;
+}
+.main .Arrow {
+}
+.main .Arrow img {
+    margin-top: 50%
+}
+.user{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+}
+.avatar {
+    display: flex;
+}
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 0.5%;
+}
+.name{
+    color: #cc6600;
+    font-weight: bold;
+}
+.nameData{
+    display: flex;
+}
+.data{
+    margin-left: 15%;
+    color: #cccccc;
+    font-size: small;
+    display: flex;
+    align-items: center;
+}
+.message{
+    color: #666666;
+}
+.messages{
+    max-height: 45vh;
+    overflow: auto;
+}
+.messages::-webkit-scrollbar {
+  width: 0;
+}
+.main .container {
+    width: 40%;
+    padding: 0.75%;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: 0;
+    margin-top: 3%;
+    padding: 0;
+    display: flex;
+}
+.inputMessage{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    padding: 0.75%;
+    outline: 0;
+    border: 0;
+    resize: none;
+    overflow: hidden;
+}
+.inputMessage:-ms-textarea-placeholder {
+  font-family: 'PT Sans', sans-serif;
+}
+.container button{
+    border 0;
+    background-color: white;
+    padding: 3%;
+    
+}
+.container button img{
+    max-width: 40%;
+    float: right;
 }
