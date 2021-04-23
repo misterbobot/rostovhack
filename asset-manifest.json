@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/rostovhack/static/css/main.3cd24689.chunk.css",
+    "main.js": "/rostovhack/static/js/main.ba038c7f.chunk.js",
+    "main.js.map": "/rostovhack/static/js/main.ba038c7f.chunk.js.map",
+    "runtime-main.js": "/rostovhack/static/js/runtime-main.19e85ab9.js",
+    "runtime-main.js.map": "/rostovhack/static/js/runtime-main.19e85ab9.js.map",
+    "static/js/2.76539130.chunk.js": "/rostovhack/static/js/2.76539130.chunk.js",
+    "static/js/2.76539130.chunk.js.map": "/rostovhack/static/js/2.76539130.chunk.js.map",
+    "static/js/3.d1c602fb.chunk.js": "/rostovhack/static/js/3.d1c602fb.chunk.js",
+    "static/js/3.d1c602fb.chunk.js.map": "/rostovhack/static/js/3.d1c602fb.chunk.js.map",
+    "index.html": "/rostovhack/index.html",
+    "static/css/main.3cd24689.chunk.css.map": "/rostovhack/static/css/main.3cd24689.chunk.css.map",
+    "static/js/2.76539130.chunk.js.LICENSE.txt": "/rostovhack/static/js/2.76539130.chunk.js.LICENSE.txt",
+    "static/media/board.9cab0c1c.png": "/rostovhack/static/media/board.9cab0c1c.png",
+    "static/media/chat.8f37e5c7.png": "/rostovhack/static/media/chat.8f37e5c7.png",
+    "static/media/login.97c979fe.png": "/rostovhack/static/media/login.97c979fe.png",
+    "static/media/projects.b8a9800c.png": "/rostovhack/static/media/projects.b8a9800c.png",
+    "static/media/sales.c5ecaff4.png": "/rostovhack/static/media/sales.c5ecaff4.png",
+    "static/media/users.6227d473.png": "/rostovhack/static/media/users.6227d473.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.19e85ab9.js",
+    "static/js/2.76539130.chunk.js",
+    "static/css/main.3cd24689.chunk.css",
+    "static/js/main.ba038c7f.chunk.js"
+  ]
+}
