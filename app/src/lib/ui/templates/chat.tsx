@@ -52,6 +52,7 @@ export const Chat: React.FC = () => {
   }
 
   const startRecord = () => {
+    
     SpeechRecognition.startListening()
     setRecording(true)
   }
@@ -61,6 +62,7 @@ export const Chat: React.FC = () => {
     setText(text + transcript)
     setRecording(false)
     resetTranscript()
+    
   }
 
   const handleChange = (event : any) =>{
@@ -109,7 +111,7 @@ export const Chat: React.FC = () => {
           }
           </div>
           <div className="container">
-            <textarea onKeyPress={(event) => handleKeyPress(event)} className="inputMessage" placeholder="Написать сообщение" defaultValue={""} value={text+transcript} onChange={(event) => handleChange(event)} />
+            <textarea onKeyPress={(event) => handleKeyPress(event)} className="inputMessage" placeholder="Написать сообщение" defaultValue={""} value={recording ? text+transcript:text} onChange={(event) => handleChange(event)} />
             {!recording ? <div onClick = {startRecord} className="niceImg"></div> : <div onClick={stopRecord} className="stopIcon"></div>}
           </div>
         </div>
