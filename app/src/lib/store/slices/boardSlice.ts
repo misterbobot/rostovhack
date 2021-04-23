@@ -103,7 +103,7 @@ export const BoardSlice = createSlice({
             });
         },
         createColumn : (state, action : PayloadAction<number>) => {
-            state.columns.push(new Column([],"Новый столбец",action.payload));
+            state.columns.push(new Column([],"Новый столбец",+ new Date()));
             return state
         }
 

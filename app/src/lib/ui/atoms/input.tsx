@@ -12,6 +12,7 @@ interface InputProps{
 }
 
 export const MyInput = styled.input<InputProps>`
+    outline : 0;
     ${({theme,color,borderColor, ...props}) => {
         const getTextColor = color ? color.main : theme.palette.text.secondary;
         const geBborderColor = borderColor ? borderColor.main : theme.palette.secondary.main;

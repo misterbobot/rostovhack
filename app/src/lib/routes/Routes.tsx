@@ -12,6 +12,7 @@ import { PrivateRoute } from './privateRoute'
 
 export const AppRoutes: React.FC = () => (
     <Switch>
+            
             <Route path="/test" component={Test} exact />
             <Route path="/login" component={loginPage} exact />
             <PrivateRoute path="/board/:id" component = {BoardPage}></PrivateRoute>

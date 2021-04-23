@@ -59,7 +59,7 @@ export const AddCardApi = async (column : number, dispatch: any) : Promise<void>
     let id = await 10;
 
     dispatch(addcard({
-        id : id,
+        id : + new Date(),
         columnid : column
     }))
 

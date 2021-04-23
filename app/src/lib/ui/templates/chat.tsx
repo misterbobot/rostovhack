@@ -36,6 +36,7 @@ const MC = styled.div`
   min-height: 100vh;
 `;
 
+
 export const Chat: React.FC = () => {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const workspace = useAppSelector((state) => state.navigator.workspace)
@@ -59,6 +60,7 @@ export const Chat: React.FC = () => {
     SpeechRecognition.stopListening()
     setText(text + transcript)
     setRecording(false)
+    resetTranscript()
   }
 
   const handleChange = (event : any) =>{
@@ -107,7 +109,7 @@ export const Chat: React.FC = () => {
           }
           </div>
           <div className="container">
-            <textarea onKeyPress={(event) => handleKeyPress(event)} className="inputMessage" placeholder="Написать сообщение" defaultValue={""} value={text} onChange={(event) => handleChange(event)} />
+            <textarea onKeyPress={(event) => handleKeyPress(event)} className="inputMessage" placeholder="Написать сообщение" defaultValue={""} value={text+transcript} onChange={(event) => handleChange(event)} />
             {!recording ? <div onClick = {startRecord} className="niceImg"></div> : <div onClick={stopRecord} className="stopIcon"></div>}
           </div>
         </div>
