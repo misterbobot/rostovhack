@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/rostovhack/static/css/main.3cd24689.chunk.css",
-    "main.js": "/rostovhack/static/js/main.ba038c7f.chunk.js",
-    "main.js.map": "/rostovhack/static/js/main.ba038c7f.chunk.js.map",
+    "main.js": "/rostovhack/static/js/main.a4534e56.chunk.js",
+    "main.js.map": "/rostovhack/static/js/main.a4534e56.chunk.js.map",
     "runtime-main.js": "/rostovhack/static/js/runtime-main.19e85ab9.js",
     "runtime-main.js.map": "/rostovhack/static/js/runtime-main.19e85ab9.js.map",
     "static/js/2.76539130.chunk.js": "/rostovhack/static/js/2.76539130.chunk.js",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.19e85ab9.js",
     "static/js/2.76539130.chunk.js",
     "static/css/main.3cd24689.chunk.css",
-    "static/js/main.ba038c7f.chunk.js"
+    "static/js/main.a4534e56.chunk.js"
   ]
 }
